@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
@@ -26,6 +27,7 @@ public class lmao extends OpMode{
     DcMotor rotator;    // controls the rotational arm
     DcMotor release;    // extends the arm
     DcMotor retract;    // retracts the arm
+    ColorSensor color;  // sees colour - for autonomous
 
     double FLAPPER_OPEN = 0.1;
     double FLAPPER_CLOSED = 0.9;
@@ -36,18 +38,19 @@ public class lmao extends OpMode{
         bL = hardwareMap.dcMotor.get("bL");          //EH2 - 2
         fR = hardwareMap.dcMotor.get("fR");          //EH2 - 0
         bR = hardwareMap.dcMotor.get("bR");          //EH2 - 3
-        lS = hardwareMap.dcMotor.get("lS");          //EH5 - 0
+        lS = hardwareMap.dcMotor.get("lS");          //EH3 - 3
 
         fL.setDirection(DcMotor.Direction.REVERSE);
         bL.setDirection(DcMotor.Direction.REVERSE);
 
-        arm = hardwareMap.servo.get("arm");
-        claw = hardwareMap.servo.get("claw");
-        left = hardwareMap.servo.get("left");
-        right = hardwareMap.servo.get("right");
-        rotator = hardwareMap.dcMotor.get("rotator");
-        release = hardwareMap.dcMotor.get("release");
-        retract = hardwareMap.dcMotor.get("retract");
+        arm = hardwareMap.servo.get("arm");             //EH2 - 0
+        claw = hardwareMap.servo.get("claw");           //EH3 - 0
+        left = hardwareMap.servo.get("left");           //EH2 - 1
+        right = hardwareMap.servo.get("right");         //EH2 - 2
+        rotator = hardwareMap.dcMotor.get("rotator");   //EH3 - 1
+        release = hardwareMap.dcMotor.get("release");   //EH3 - 2
+        retract = hardwareMap.dcMotor.get("retract");   //EH3 - 0
+        color = hardwareMap.colorSensor.get("color");   //EH2 - 0
 
     }
 
