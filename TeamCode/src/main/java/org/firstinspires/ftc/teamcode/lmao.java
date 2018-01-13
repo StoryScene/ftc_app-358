@@ -57,7 +57,7 @@ public class lmao extends OpMode{
     public void loop() {
 
         // Holds arm in place
-        arm.setPosition(0);
+        arm.setPosition(0.8);
 
         // Drive Code
         TeleOp_Drive_Code.TeleOpDrive(gamepad1, fL, bL, fR, bR);
@@ -66,11 +66,11 @@ public class lmao extends OpMode{
         lS.setPower(0);
 
         if (gamepad2.dpad_up){
-            lS.setPower(-0.7);
+            lS.setPower(0.7);
         }
 
         if (gamepad2.dpad_down){
-            lS.setPower(0.7);
+            lS.setPower(-0.4);
         }
 
         // Glyph Mechanism Controller
@@ -80,8 +80,8 @@ public class lmao extends OpMode{
         }
 
         else{
-            left.setPosition(0);
-            right.setPosition(1);
+            left.setPosition(0.7);
+            right.setPosition(0.3);
         }
 
         // Relic Grabbing Mechanism
@@ -90,8 +90,8 @@ public class lmao extends OpMode{
         }
         else claw.setPosition(FLAPPER_CLOSED);
 
-        if(gamepad1.left_bumper) rotator.setPower(0.5); // grabber rotation
-        else if (gamepad1.right_bumper) rotator.setPower(-0.5);
+        if(gamepad2.left_bumper) rotator.setPower(0.5); // grabber rotation
+        else if (gamepad2.right_bumper) rotator.setPower(-0.5);
         else rotator.setPower(0);
 
         if(gamepad1.dpad_up){ // extend and retract arm
