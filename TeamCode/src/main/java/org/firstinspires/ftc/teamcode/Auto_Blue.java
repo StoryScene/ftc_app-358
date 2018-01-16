@@ -37,7 +37,7 @@ public class Auto_Blue extends LinearOpMode {
     double oPosition = 1;   // original position
 
     enum state {
-        JEWEL, STOP, RED, BLUE, TURN, BOX
+        JEWEL, STOP, RED, BLUE, NULL, TURN, BOX
     }
 
     public void runOpMode() throws InterruptedException {
@@ -84,14 +84,14 @@ public class Auto_Blue extends LinearOpMode {
 
                 case JEWEL:
                     lS.setPower(-0.5);
-                    sleep(200);
+                    sleep(300);
                     lS.setPower(0);
                     if (color.blue()/2 > color.red()) { //blue: move backwards
-                        fL.setPower(-POWER);
-                        bL.setPower(-POWER);
-                        fR.setPower(-POWER);
-                        bR.setPower(-POWER);
-                        sleep(200);
+                        fL.setPower(POWER);
+                        bL.setPower(POWER);
+                        fR.setPower(POWER);
+                        bR.setPower(POWER);
+                        sleep(300);
                         fL.setPower(0);
                         bL.setPower(0);
                         fR.setPower(0);
@@ -100,7 +100,7 @@ public class Auto_Blue extends LinearOpMode {
                         break;
                     }
 
-                    if (color.blue() < color.red()/2) { //red: turn left and then reset direction
+                    else if (color.blue() < color.red()/2) { //red: turn left and then reset direction
                         fL.setPower(-POWER);
                         bL.setPower(-POWER);
                         fR.setPower(POWER);
@@ -126,6 +126,12 @@ public class Auto_Blue extends LinearOpMode {
                         bR.setPower(0);
                         state358 = state.RED;
                         break;
+                    }
+
+                    else {
+                        arm.setPosition(oPosition);
+                        sleep(2000);
+                        state358 = state.NULL;
                     }
 
                     break;
@@ -160,6 +166,15 @@ public class Auto_Blue extends LinearOpMode {
                     fR.setPower(0);
                     bR.setPower(0);
 
+                    state358 = state.TURN;
+                    break;
+
+                case NULL:
+                    fL.setPower(-POWER);
+                    bL.setPower(-POWER);
+                    fR.setPower(-POWER);
+                    bR.setPower(-POWER);
+                    sleep(900);
                     state358 = state.TURN;
                     break;
 
