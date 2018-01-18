@@ -13,6 +13,8 @@ import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
+import org.firstinspires.ftc.robotcore.external.navigation.RelicRecoveryVuMark;
+
 @Autonomous
 
 public class Auto_Blue extends LinearOpMode {
@@ -229,6 +231,8 @@ public class Auto_Blue extends LinearOpMode {
                     fR.setPower(0);
                     bR.setPower(0);
                     sleep(30000);
+
+
 
             }
         }
