@@ -14,6 +14,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 import org.firstinspires.ftc.robotcore.external.navigation.RelicRecoveryVuMark;
+import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
 
 @Autonomous
 
@@ -73,6 +74,9 @@ public class Auto_Blue extends LinearOpMode {
         arm.setPosition(dPosition);
         left.setPosition(0);
         right.setPosition(0);
+
+        VuforiaLocalizer vuforia;
+        int cameraMonitorViewId = hardwareMap.appContext.getResources().getIdentifier("cameraMonitorViewId", "id", hardwareMap.appContext.getPackageName());
 
         waitForStart();
 
