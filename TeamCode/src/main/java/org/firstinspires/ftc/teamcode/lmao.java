@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.Servo;
 
 /**
@@ -29,6 +30,8 @@ public class lmao extends OpMode{
     DcMotor retract;    // retracts the arm
     ColorSensor color;  // sees colour - for autonomous
 
+    DigitalChannel digitalTouch;
+
     double FLAPPER_OPEN = 0.1;
     double FLAPPER_CLOSED = 0.9;
 
@@ -52,29 +55,38 @@ public class lmao extends OpMode{
         retract = hardwareMap.dcMotor.get("retract");   //EH3 - 0
         color = hardwareMap.colorSensor.get("color");   //EH2 - 0
 
+        digitalTouch = hardwareMap.get(DigitalChannel.class, "sensor_digital");
+        digitalTouch.setMode(DigitalChannel.Mode.INPUT);
+
     }
 
     public void loop() {
 
         // Holds arm in place
-        arm.setPosition(0.8);
+        arm.setPosition(1);
 
         // Drive Code
         TeleOp_Drive_Code.TeleOpDrive(gamepad1, fL, bL, fR, bR);
 
         // Linear Slide Controller
-        lS.setPower(0);
+        if (digitalTouch.getState() == false) {
+            telemetry.addData("Digital Touch", "Is Pressed");
+            //if (gamepad2.dpad_up) ls.setPower(0.7);
+            if (lS.getPower() > 0 ) lS.setPower(0);
 
-        if (gamepad2.dpad_up){
-            lS.setPower(0.7);
+        } else {
+            telemetry.addData("Digital Touch", "Is Not Pressed");
+            if (gamepad2.dpad_up) {
+                lS.setPower(0.7);
+            } else lS.setPower(0);
+
         }
-
         if (gamepad2.dpad_down){
             lS.setPower(-0.4);
         }
 
         // Glyph Mechanism Controller
-        if (gamepad2.a){
+        if (gamepad2.a) {
             left.setPosition(1);
             right.setPosition(0);
         }

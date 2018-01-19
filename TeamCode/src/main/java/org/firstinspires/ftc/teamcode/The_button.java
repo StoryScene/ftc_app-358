@@ -21,21 +21,20 @@ public class The_button extends OpMode {
 
     public void loop(){
 
-        if (gamepad2.dpad_down){
-            lS.setPower(-0.4);
-        }
-
-        if (digitalTouch.getState() == false) {  //if is pressed
+        if (digitalTouch.getState() == false) {
             telemetry.addData("Digital Touch", "Is Pressed");
-            if (gamepad2.dpad_up){
-                lS.setPower(0);
-            }
+            //if (gamepad2.dpad_up) ls.setPower(0.7);
+            if (lS.getPower() > 0 ) lS.setPower(0);
 
         } else {
             telemetry.addData("Digital Touch", "Is Not Pressed");
-            if (gamepad2.dpad_up){
+            if (gamepad2.dpad_up) {
                 lS.setPower(0.7);
-            }
+            } else lS.setPower(0);
+
+        }
+        if (gamepad2.dpad_down){
+            lS.setPower(-0.4);
         }
 
     }
