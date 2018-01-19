@@ -89,7 +89,7 @@ public class Auto_Blue extends LinearOpMode {
             switch(state358) {
 
                 case JEWEL:
-                    lS.setPower(-0.5);
+                    lS.setPower(0.5);
                     sleep(300);
                     lS.setPower(0);
                     if (color.blue()/2 > color.red()) { //blue: move backwards
