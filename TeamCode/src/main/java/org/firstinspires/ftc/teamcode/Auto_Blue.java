@@ -92,11 +92,11 @@ public class Auto_Blue extends LinearOpMode {
                     lS.setPower(0.5);
                     sleep(300);
                     lS.setPower(0);
-                    if (color.blue()/2 > color.red()) { //blue: move backwards
-                        fL.setPower(POWER);
-                        bL.setPower(POWER);
-                        fR.setPower(POWER);
-                        bR.setPower(POWER);
+                    if (color.blue()/1.5 > color.red()) { //blue: move backwards
+                        fL.setPower(-POWER);
+                        bL.setPower(-POWER);
+                        fR.setPower(-POWER);
+                        bR.setPower(-POWER);
                         sleep(300);
                         fL.setPower(0);
                         bL.setPower(0);
@@ -106,7 +106,7 @@ public class Auto_Blue extends LinearOpMode {
                         break;
                     }
 
-                    else if (color.blue() < color.red()/2) { //red: turn left and then reset direction
+                    else if (color.blue() < color.red()/1.5) { //red: turn left and then reset direction
                         fL.setPower(-POWER);
                         bL.setPower(-POWER);
                         fR.setPower(POWER);
