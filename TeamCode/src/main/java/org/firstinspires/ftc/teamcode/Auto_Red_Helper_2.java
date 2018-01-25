@@ -69,6 +69,7 @@ public class Auto_Red_Helper_2 extends LinearOpMode {
         retract = hardwareMap.dcMotor.get("retract");   //EH3 - 0
         color = hardwareMap.colorSensor.get("color");   //EH2 - 0
 
+
         int cameraMonitorViewId = hardwareMap.appContext.getResources().getIdentifier("cameraMonitorViewId", "id", hardwareMap.appContext.getPackageName());
         VuforiaLocalizer.Parameters parameters = new VuforiaLocalizer.Parameters(cameraMonitorViewId);
 
