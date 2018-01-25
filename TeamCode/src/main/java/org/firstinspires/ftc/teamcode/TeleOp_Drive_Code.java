@@ -58,10 +58,19 @@ public class TeleOp_Drive_Code{
         double power = -1 * joystick * abs(joystick) / (0.5 * pow(gamePad.right_trigger, 2) + 1);
         double maxPower = findMax(abs(frontLeftPower), abs(backLeftPower), abs(frontRightPower), abs(backRightPower));
 
-        frontLeft.setPower(power * frontLeftPower / maxPower);
-        backLeft.setPower(power * backLeftPower / maxPower);
-        frontRight.setPower(power * frontRightPower / maxPower);
-        backRight.setPower(power * backRightPower / maxPower);
+        if(!gamePad.left_bumper){
+            frontLeft.setPower(power * frontLeftPower / maxPower);
+            backLeft.setPower(power * backLeftPower / maxPower);
+            frontRight.setPower(power * frontRightPower / maxPower);
+            backRight.setPower(power * backRightPower / maxPower);
+        }
+        else{
+            frontLeft.setPower(power * frontLeftPower / maxPower/2);
+            backLeft.setPower(power * backLeftPower / maxPower/2);
+            frontRight.setPower(power * frontRightPower / maxPower/2);
+            backRight.setPower(power * backRightPower / maxPower/2);
+        }
+
 
     }
 
