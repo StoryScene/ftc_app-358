@@ -102,8 +102,8 @@ public class lmao extends OpMode{
         }
         else claw.setPosition(FLAPPER_CLOSED);
 
-        if(gamepad1.left_bumper) rotator.setPower(0.5); // grabber rotation
-        else if (gamepad1.right_bumper) rotator.setPower(-0.5);
+        if(gamepad1.left_bumper) rotator.setPower(0.7); // grabber rotation
+        else if (gamepad1.right_bumper) rotator.setPower(-0.7);
         else rotator.setPower(0);
 
         if(gamepad2.right_bumper){ // extends arm
