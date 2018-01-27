@@ -84,7 +84,7 @@ public class Auto_Red extends LinearOpMode {
 
                 case JEWEL:
                     lS.setPower(0.5);
-                    sleep(200);
+                    sleep(500);
                     lS.setPower(0);
                     if (color.blue()/1.5 > color.red()) { //blue: move forward
                         fL.setPower(POWER);
@@ -141,7 +141,7 @@ public class Auto_Red extends LinearOpMode {
                     bL.setPower(POWER);
                     fR.setPower(POWER);
                     bR.setPower(POWER);
-                    sleep(1000);
+                    sleep(1500);
 
                     fL.setPower(0);
                     bL.setPower(0);
@@ -159,7 +159,7 @@ public class Auto_Red extends LinearOpMode {
                     bL.setPower(POWER);
                     fR.setPower(POWER);
                     bR.setPower(POWER);
-                    sleep(900);
+                    sleep(1200);
 
                     fL.setPower(0);
                     bL.setPower(0);
@@ -174,7 +174,7 @@ public class Auto_Red extends LinearOpMode {
                     bL.setPower(POWER);
                     fR.setPower(POWER);
                     bR.setPower(POWER);
-                    sleep(900);
+                    sleep(1000);
                     state358 = state.TURN;
                     break;
 
@@ -183,7 +183,7 @@ public class Auto_Red extends LinearOpMode {
                     bL.setPower(POWER);
                     fR.setPower(-POWER);
                     bR.setPower(-POWER);
-                    sleep(650);
+                    sleep(1600);
 
                     fL.setPower(0);
                     bL.setPower(0);
@@ -198,7 +198,7 @@ public class Auto_Red extends LinearOpMode {
                     bL.setPower(POWER);
                     fR.setPower(POWER);
                     bR.setPower(POWER);
-                    sleep(200);
+                    sleep(1000);
 
                     fL.setPower(0);
                     bL.setPower(0);
