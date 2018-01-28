@@ -46,7 +46,7 @@ public class Auto_Red_Helper_3 extends LinearOpMode {
     double oPosition = 1;   // original position
 
     enum state {
-        SCAN, JEWEL, STOP, RED, BLUE, NULL, TURN, BOX
+        JEWEL, STOP, REDRIGHT, BLUE, NULL, TURN, BOX
     }
 
     public void runOpMode() throws InterruptedException {
@@ -75,7 +75,7 @@ public class Auto_Red_Helper_3 extends LinearOpMode {
 
         parameters.vuforiaLicenseKey = "AXzW9CD/////AAAAGTPAtr9HRUXZmowtd9p0AUwuXiBVONS/c5x1q8OvjMrQ8/XJGxEp0TP9Kl8PvqSzeXOWIvVa3AeB6MyAQboyW/Pgd/c4a4U/VBs1ouUsVBkEdbaq1iY7RR0cjYr3eLwEt6tmI37Ugbwrd5gmxYvOBQkGqzpbg2U2bVLycc5PkOixu7PqPqaINGZYSlvUzEMAenLOCxZFpsayuCPRbWz6Z9UJfLeAbfAPmmDYoKNXRFll8/jp5Ie7iAhSQgfFggWwyiqMRCFA3GPTsOJS4H1tSiGlMjVzbJnkusPKXfJ0dK3OH9u7ox9ESpi91T0MemXw3nn+/6QRvjGtgFH+wMDuQX7ta89+yW+wqdXX9ZQu8BzY";
 
-        parameters.cameraDirection = VuforiaLocalizer.CameraDirection.BACK;
+        parameters.cameraDirection = VuforiaLocalizer.CameraDirection.FRONT;
         this.vuforia = ClassFactory.createVuforiaLocalizer(parameters);
 
         VuforiaTrackables relicTrackables = this.vuforia.loadTrackablesFromAsset("RelicVuMark");
@@ -84,7 +84,7 @@ public class Auto_Red_Helper_3 extends LinearOpMode {
 
         relicTrackables.activate();
 
-        state358 = state.SCAN;
+        state358 = state.JEWEL;
 
         fL.setDirection(DcMotor.Direction.REVERSE);
         bL.setDirection(DcMotor.Direction.REVERSE);
@@ -105,18 +105,6 @@ public class Auto_Red_Helper_3 extends LinearOpMode {
             release.setPower(-0.01);
 
             switch(state358) {
-                case SCAN:
-                    while (opModeIsActive()) {
-                        RelicRecoveryVuMark vuMark = RelicRecoveryVuMark.from(relicTemplate);
-                        if (vuMark != RelicRecoveryVuMark.UNKNOWN || time >= 5.0) {
-                            telemetry.addData("VuMark", "%s visible", vuMark);
-                            state358 = state.JEWEL;
-                            break;
-                        } else {
-                            telemetry.addData("VuMark", "not visible");
-                        }
-                        telemetry.update();
-                    }
 
                 case JEWEL:
                     lS.setPower(0.5);
@@ -160,7 +148,43 @@ public class Auto_Red_Helper_3 extends LinearOpMode {
                         bL.setPower(0);
                         fR.setPower(0);
                         bR.setPower(0);
-                        state358 = state.RED;
+                        sleep(200);
+
+                        fL.setPower(POWER);
+                        bL.setPower(POWER);
+                        fR.setPower(POWER);
+                        bR.setPower(POWER);
+                        sleep(200);
+
+                        RelicRecoveryVuMark  vuMark = RelicRecoveryVuMark.UNKNOWN;
+
+                        while (opModeIsActive()) {
+                            vuMark = RelicRecoveryVuMark.from(relicTemplate);
+                            if (vuMark != RelicRecoveryVuMark.UNKNOWN || getRuntime()>=20.0) {
+                                telemetry.addData("VuMark", "%s visible", vuMark);
+                                break;
+                            } else {
+                                telemetry.addData("VuMark", "not visible");
+                            }
+                            telemetry.update();
+                        }
+
+                        if (vuMark == RelicRecoveryVuMark.RIGHT){
+                            state358 = state.REDRIGHT;
+                        }
+
+                        else if (vuMark == RelicRecoveryVuMark.LEFT){
+                            state358 = state.STOP;
+                        }
+
+                        else if (vuMark == RelicRecoveryVuMark.CENTER){
+                            state358 = state.STOP;
+                        }
+
+                        else{
+                            state358 = state.STOP;
+                        }
+
                         break;
                     }
 
@@ -172,12 +196,12 @@ public class Auto_Red_Helper_3 extends LinearOpMode {
 
                     break;
 
-                case RED:
+                case REDRIGHT:
                     fL.setPower(POWER);
                     bL.setPower(POWER);
                     fR.setPower(POWER);
                     bR.setPower(POWER);
-                    sleep(1500);
+                    sleep(1100);
 
                     fL.setPower(0);
                     bL.setPower(0);
@@ -195,7 +219,7 @@ public class Auto_Red_Helper_3 extends LinearOpMode {
                     bL.setPower(POWER);
                     fR.setPower(POWER);
                     bR.setPower(POWER);
-                    sleep(1200);
+                    sleep(800);
 
                     fL.setPower(0);
                     bL.setPower(0);
@@ -219,7 +243,7 @@ public class Auto_Red_Helper_3 extends LinearOpMode {
                     bL.setPower(POWER);
                     fR.setPower(-POWER);
                     bR.setPower(-POWER);
-                    sleep(1600);
+                    sleep(1200);
 
                     fL.setPower(0);
                     bL.setPower(0);
