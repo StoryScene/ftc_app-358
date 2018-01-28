@@ -141,7 +141,7 @@ public class Auto_Blue extends LinearOpMode {
                     bL.setPower(-POWER);
                     fR.setPower(-POWER);
                     bR.setPower(-POWER);
-                    sleep(800);
+                    sleep(700);
 
                     fL.setPower(0);
                     bL.setPower(0);
@@ -159,7 +159,7 @@ public class Auto_Blue extends LinearOpMode {
                     bL.setPower(-POWER);
                     fR.setPower(-POWER);
                     bR.setPower(-POWER);
-                    sleep(1000);
+                    sleep(1200);
 
                     fL.setPower(0);
                     bL.setPower(0);
@@ -183,7 +183,7 @@ public class Auto_Blue extends LinearOpMode {
                     bL.setPower(POWER);
                     fR.setPower(-POWER);
                     bR.setPower(-POWER);
-                    sleep(1000);
+                    sleep(700);
 
                     fL.setPower(0);
                     bL.setPower(0);
