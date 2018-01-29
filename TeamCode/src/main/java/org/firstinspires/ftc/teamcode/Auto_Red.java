@@ -68,10 +68,6 @@ public class Auto_Red extends LinearOpMode {
 
         double POWER = .5;
 
-        arm.setPosition(dPosition);
-        left.setPosition(0);
-        right.setPosition(0);
-
         waitForStart();
 
         while (opModeIsActive()) {
@@ -83,6 +79,12 @@ public class Auto_Red extends LinearOpMode {
             switch(state358) {
 
                 case JEWEL:
+                    arm.setPosition(dPosition);
+                    left.setPosition(0);
+                    right.setPosition(0);
+
+                    sleep(1000);
+
                     lS.setPower(0.5);
                     sleep(500);
                     lS.setPower(0);
@@ -183,7 +185,7 @@ public class Auto_Red extends LinearOpMode {
                     bL.setPower(POWER);
                     fR.setPower(-POWER);
                     bR.setPower(-POWER);
-                    sleep(1200);
+                    sleep(1000);
 
                     fL.setPower(0);
                     bL.setPower(0);
