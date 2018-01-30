@@ -1,11 +1,14 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 /**
  * Created by kevinwang on 1/30/18.
  */
+
+@Autonomous
 
 public class MotorTest extends LinearOpMode{
 
@@ -19,6 +22,8 @@ public class MotorTest extends LinearOpMode{
         Motor = hardwareMap.dcMotor.get("Motor");
         Power = 0.8;
         Time = 2000;
+
+        waitForStart();
 
         while(opModeIsActive()){
 
