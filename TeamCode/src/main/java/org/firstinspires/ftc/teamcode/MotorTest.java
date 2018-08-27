@@ -30,7 +30,7 @@ public class MotorTest extends LinearOpMode{
 
         waitForStart();
 
-        while(opModeIsActive()){
+        while (opModeIsActive()){
 
             Servo.setPosition(Power*sin(Time*PI/180));
             sleep(10);
