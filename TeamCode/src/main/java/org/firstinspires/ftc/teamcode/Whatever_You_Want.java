@@ -31,6 +31,7 @@ public class Whatever_You_Want extends LinearOpMode{
 
         waitForStart();
 
+        //time not yet set
         Whatever_Drive_Code.Drive(FL, BL, FR, FL, 1, 1);
         sleep(1000);
 
