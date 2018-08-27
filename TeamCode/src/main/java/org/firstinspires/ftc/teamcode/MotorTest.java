@@ -3,6 +3,9 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
+
+import static java.lang.Math.*;
 
 /**
  * Created by kevinwang on 1/30/18.
@@ -12,29 +15,27 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 public class MotorTest extends LinearOpMode{
 
-    DcMotor Motor;
+    Servo Servo;
 
-    double Power;
-    long Time;
+    double RetractedPosition;
+    double ExtendedPosition;
+
+    int Time;
 
     public void runOpMode() throws InterruptedException{
 
-        Motor = hardwareMap.dcMotor.get("Motor");
-        Power = 0.8;
-        Time = 2000;
+        Servo = hardwareMap.servo.get("Motor");
+        double Power = 0.8;
+        Time = 1;
 
         waitForStart();
 
         while(opModeIsActive()){
 
-            Motor.setPower(Power);
-            sleep(Time);
+            Servo.setPosition(Power*sin(Time*PI/180));
+            sleep(10);
+            Time = Time + 1;
 
-            Motor.setPower(-1*Power);
-            sleep(Time);
-
-            Motor.setPower(0);
-            sleep(Time);
         }
     }
 }
