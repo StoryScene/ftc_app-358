@@ -24,23 +24,29 @@ public class Whatever_Drive_Code {
             strafe = 0;
             rotate = 0;
         }
-
-        if (mode == 1){
+        else if (mode == 1){
             drive = direction;
             strafe = 0;
             rotate = 0;
         }
 
-        if (mode == 2){
+        else if (mode == 2){
             drive = 0;
             strafe = direction;
             rotate = 0;
         }
 
-        if (mode == 3){
+        else if (mode == 3){
             drive = 0;
             strafe = 0;
             rotate = direction;
+        }
+        else
+        {
+            frontLeft.setPower(0);
+            backLeft.setPower(0);
+            frontRight.setPower(0);
+            backRight.setPower(0);
         }
 
         double frontLeftPower = drive - strafe - rotate;

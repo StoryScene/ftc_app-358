@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
@@ -26,29 +27,30 @@ public class Whatever_You_Want extends LinearOpMode{
         BL = hardwareMap.dcMotor.get("BL");
         BR = hardwareMap.dcMotor.get("BR");
 
-        FL.setDirection(DcMotorSimple.Direction.REVERSE);
-        BL.setDirection(DcMotorSimple.Direction.REVERSE);
+        FL.setDirection(DcMotor.Direction.REVERSE);
+        BL.setDirection(DcMotor.Direction.REVERSE);
 
         waitForStart();
 
         //time not yet set
         Whatever_Drive_Code.Drive(FL, BL, FR, FL, 1, 1);
-        sleep(1000);
+        sleep(1600);
 
         Whatever_Drive_Code.Drive(FL, BL, FR, FL, 2, -1);
-        sleep(1000);
+        sleep(2200);
 
         Whatever_Drive_Code.Drive(FL, BL, FR, FL, 1, 1);
-        sleep(1000);
+        sleep(500);
 
         Whatever_Drive_Code.Drive(FL, BL, FR, FL, 0, 1);
-        sleep(1000);
+        sleep(4000);
 
         Whatever_Drive_Code.Drive(FL, BL, FR, FL, 1, 1);
-        sleep(1000);
+        sleep(500);
 
         Whatever_Drive_Code.Drive(FL, BL, FR, FL, 2, 1);
-        sleep(1000);
+        sleep(2400);
 
+        Whatever_Drive_Code.Drive(FL, BL, FR, FL, 0, 1);
     }
 }

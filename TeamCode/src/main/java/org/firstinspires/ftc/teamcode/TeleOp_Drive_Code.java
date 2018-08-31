@@ -71,6 +71,12 @@ public class TeleOp_Drive_Code{
             backRight.setPower(power * backRightPower / maxPower/2);
         }
 
+        if(gamePad.a){
+            frontLeft.setPower(0);
+            backLeft.setPower(0);
+            frontRight.setPower(0);
+            backRight.setPower(0);
+        }
 
     }
 
