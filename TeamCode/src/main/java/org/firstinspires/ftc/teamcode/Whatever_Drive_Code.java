@@ -13,17 +13,18 @@ public class Whatever_Drive_Code {
         // 0 mode is to stop
         // 1 mode is driving front and back, direction 1 is forward, direction -1 is backwards
         // 2 mode is strafing left and right, direction 1 is right, direction -1 is left
-        // 3 mode is rotating, direction 1 is clockwise, direction -1 is counter-clockwise
+        // 3 mode is rotating, direction 1 is clockwise, direction -1 is counter-clockwise *not used
 
         double drive = 0;
-        double strafe =0;
-        double rotate =0;
+        double strafe = 0;
+        double rotate = 0;
 
         if (mode == 0){
             drive = 0;
             strafe = 0;
             rotate = 0;
         }
+
         else if (mode == 1){
             drive = direction;
             strafe = 0;
@@ -41,8 +42,8 @@ public class Whatever_Drive_Code {
             strafe = 0;
             rotate = direction;
         }
-        else
-        {
+
+        else {
             frontLeft.setPower(0);
             backLeft.setPower(0);
             frontRight.setPower(0);
