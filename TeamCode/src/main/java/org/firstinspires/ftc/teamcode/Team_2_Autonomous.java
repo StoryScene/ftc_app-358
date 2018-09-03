@@ -30,31 +30,39 @@ public class Team_2_Autonomous extends LinearOpMode {
 
             leftMotor.setPower(POWER);//run forward
             rightMotor.setPower(POWER);
-            sleep(800);
+            sleep(805);
 
             leftMotor.setPower(0.3);//turn left
             rightMotor.setPower(-0.3);
-            sleep(650);
+            sleep(600);
 
             leftMotor.setPower(0.75);//run left
             rightMotor.setPower(0.75);
-            sleep(1000);
+            sleep(1010);
 
             leftMotor.setPower(-0.3);//turn right
             rightMotor.setPower(0.3);
             sleep(650);
 
-            leftMotor.setPower(POWER);//run forward
-            rightMotor.setPower(POWER);
-            sleep(800);
+            leftMotor.setPower(0.2);//run forward
+            rightMotor.setPower(0.2);
+            sleep(830);
+
+            leftMotor.setPower(0);//stop
+            rightMotor.setPower(0);
+            sleep(4000);
+
+            leftMotor.setPower(0.2);//run forward
+            rightMotor.setPower(0.2);
+            sleep(860);
 
             leftMotor.setPower(-0.3);//turn right
             rightMotor.setPower(0.3);
-            sleep(700);
+            sleep(775);
 
             leftMotor.setPower(0.8);//run right
             rightMotor.setPower(0.8);
-            sleep(750);
+            sleep(850);
 
             leftMotor.setPower(0);//stop
             rightMotor.setPower(0);
@@ -63,3 +71,4 @@ public class Team_2_Autonomous extends LinearOpMode {
         }
     }
 }
+
