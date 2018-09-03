@@ -34,7 +34,7 @@ public class Whatever_You_Want extends LinearOpMode{
 
         //time not yet set
         Whatever_Drive_Code.Drive(FL, BL, FR, BR, 1, 0.8);
-        sleep(1600);
+        sleep(1200);
 
         Whatever_Drive_Code.Drive(FL, BL, FR, BR, 2, -0.8);
         sleep(2200);
