@@ -35,7 +35,10 @@ public class Test extends OpMode{
 
     public void loop(){
 
+        FL.setPower(gamepad1.left_stick_y);
         BL.setPower(gamepad1.left_stick_y);
+        FR.setPower(gamepad1.left_stick_y);
+        BR.setPower(gamepad1.left_stick_y);
 
     }
 }
