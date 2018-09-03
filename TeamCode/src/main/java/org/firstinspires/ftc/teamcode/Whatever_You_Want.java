@@ -36,7 +36,7 @@ public class Whatever_You_Want extends LinearOpMode{
         Whatever_Drive_Code.Drive(FL, BL, FR, BR, 1, 0.8);
         sleep(1200);
 
-        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 2, -0.8);
+        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 2, 0.8);
         sleep(2200);
 
         Whatever_Drive_Code.Drive(FL, BL, FR, BR, 1, 0.8);
@@ -48,7 +48,7 @@ public class Whatever_You_Want extends LinearOpMode{
         Whatever_Drive_Code.Drive(FL, BL, FR, BR, 1, 0.8);
         sleep(500);
 
-        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 2, 0.8);
+        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 2, -0.8);
         sleep(2400);
 
         Whatever_Drive_Code.Drive(FL, BL, FR, BR, 0, 0.8);
