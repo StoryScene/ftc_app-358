@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 public class Whatever_Drive_Code {
 
-    static void Drive(DcMotor frontLeft, DcMotor backLeft, DcMotor frontRight, DcMotor backRight, int mode, int direction){
+    static void Drive(DcMotor frontLeft, DcMotor backLeft, DcMotor frontRight, DcMotor backRight, int mode, double direction){
 
         // 0 mode is to stop
         // 1 mode is driving front and back, direction 1 is forward, direction -1 is backwards
