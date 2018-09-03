@@ -33,24 +33,24 @@ public class Whatever_You_Want extends LinearOpMode{
         waitForStart();
 
         //time not yet set
-        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 1, 1);
+        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 1, 0.8);
         sleep(1600);
 
-        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 2, -1);
+        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 2, -0.8);
         sleep(2200);
 
-        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 1, 1);
+        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 1, 0.8);
         sleep(500);
 
-        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 0, 1);
+        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 0, 0.8);
         sleep(4000);
 
-        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 1, 1);
+        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 1, 0.8);
         sleep(500);
 
-        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 2, 1);
+        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 2, 0.8);
         sleep(2400);
 
-        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 0, 1);
+        Whatever_Drive_Code.Drive(FL, BL, FR, BR, 0, 0.8);
     }
 }
