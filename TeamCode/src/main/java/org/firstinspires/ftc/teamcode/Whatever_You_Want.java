@@ -40,7 +40,7 @@ public class Whatever_You_Want extends LinearOpMode{
         BL.setPower(0);
         FR.setPower(-0.2);
         BR.setPower(-0.2);
-        sleep(300);
+        sleep(400);
 
         Whatever_Drive_Code.Drive(FL, BL, FR, BR, 0, 0);
         sleep(500);
