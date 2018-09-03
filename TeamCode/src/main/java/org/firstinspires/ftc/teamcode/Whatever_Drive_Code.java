@@ -12,7 +12,7 @@ public class Whatever_Drive_Code {
 
         // 0 mode is to stop
         // 1 mode is driving front and back, direction 1 is forward, direction -1 is backwards
-        // 2 mode is strafing left and right, direction 1 is right, direction -1 is left
+        // 2 mode is strafing left and right, direction 1 is left, direction -1 is right
         // 3 mode is rotating, direction 1 is clockwise, direction -1 is counter-clockwise *not used
 
         double drive = 0;
